@@ -1,0 +1,15 @@
+import React, {useState, useEffect } from 'react';
+
+
+const Content=()=>{
+	return(
+		<main className="content">
+			lorremplus............
+		</main>
+
+	)
+
+}
+
+
+export default Content;
