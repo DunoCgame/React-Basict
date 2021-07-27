@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router,   Switch,   Route,   Link,   NavLink } from "react-router-dom";
-import Hello from "./components/Hello.js";
 import Header from "./components/Header.js";
 import Content from "./components/Content.js";
 import Images_post from "./components/Images.js";
-import MyComponent from "./AxiosPeticion/Call.js";
+import Photos from "./components/photos.js";
 import logo from './logo.png';
 import './App.css';
 
@@ -25,15 +24,16 @@ function About() {
 
 
 function Home() {
-  return( 
-  
-  <div className="ContainnerHome">
-	<h2 className="TitleArea">Home</h2>
-	<Images_post/>
-  </div>
-  
-  
-  );
+	  return( 
+	  
+		  <div className="ContainnerHome">
+			<h2 className="TitleArea">Home</h2>
+					
+			<Images_post/>
+		  </div>
+	  
+	  
+	  );
 }
 
 
@@ -42,10 +42,7 @@ function Home() {
 
 
 class App extends Component {
-  
-  // <Hello/>
 
-	
   render(){
 		return(
 			<div className="containner">
@@ -53,6 +50,10 @@ class App extends Component {
 				 <Router>
 				 <Header/>
 					<Switch>
+							<Route path="/photos/:id" exact>
+								<Photos/>
+							</Route> 
+
 							<Route path="/" exact>
 								<Home/>
 							</Route> 
